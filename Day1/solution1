@@ -1,0 +1,21 @@
+const fs = require('fs');
+
+function readFileContent(filePath) {
+    // Asynchronous file read operation
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            // Handle error and print to console
+            console.error(`Error reading file: ${err.message}`);
+            return;
+        }
+
+        // Print the file content to the console
+        console.log('File Content:');
+        console.log(data);
+    });
+}
+
+// Test Cases
+readFileContent('test-files/file1.txt');
+readFileContent('test-files/empty-file.txt');
+readFileContent('test-files/nonexistent-file.txt');
