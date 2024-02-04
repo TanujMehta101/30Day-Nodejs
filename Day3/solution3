@@ -1,1 +1,27 @@
+const { exec } = require('child_process');
+
+function executeCommand(command) {
+    // Execute shell command
+    exec(command, (err, stdout, stderr) => {
+        if (err) {
+            // Handle error and print to console
+            console.error(`Error executing command: ${err.message}`);
+            return;
+        }
+
+        // Print the output of the command to the console
+        console.log('Command Output:');
+        console.log(stdout);
+
+        // Print any error output to the console
+        if (stderr) {
+            console.error('Error Output:');
+            console.error(stderr);
+        }
+    });
+}
+
+// Test Cases
+executeCommand('ls -la');
+executeCommand('echo "Hello, Node.js!"');
 
