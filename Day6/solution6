@@ -1,1 +1,30 @@
+/**
+ * Handles GET requests to "/greet" endpoint
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ */
+function greetHandler(req, res) {
+    // Extract the "name" query parameter from the request
+    const name = req.query.name;
 
+    // Check if the "name" parameter is provided
+    if (name) {
+        // If provided, send a personalized greeting
+        res.send(`Hello, ${name}!`);
+    } else {
+        // If not provided, send a default greeting
+        res.send('Hello, Guest!');
+    }
+}
+
+const express = require('express');
+const app = express();
+
+// Define the route for the "/greet" endpoint
+app.get('/greet', greetHandler);
+
+// Start the server
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+});
