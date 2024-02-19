@@ -1,1 +1,5 @@
 
+
+d. All of the above
+
+All of the options listed (Express, Body-parser, and Socket.io) are examples of Node.js modules. Node.js modules are reusable pieces of code that encapsulate related functionality and can be easily imported into other Node.js applications. Express is a web application framework, Body-parser is a middleware for parsing incoming request bodies, and Socket.io is a library for real-time, bidirectional communication between web clients and servers.
