@@ -1,4 +1,5 @@
-```const express = require('express');
+```javascript
+const express = require('express');
 ```
 This line imports the Express framework, which is a popular Node.js framework for building web applications.
 
