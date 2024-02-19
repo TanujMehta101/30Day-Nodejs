@@ -8,37 +8,37 @@ function requestLoggerMiddleware(req, res, next) {
 ```
 This line defines a middleware function named requestLoggerMiddleware. It takes three parameters: req (the request object), res (the response object), and next (a callback function to pass control to the next middleware function).
 
-```
+```javascript
 const timestamp = new Date().toISOString();
 ```
 This line creates a timestamp representing the current time in UTC timezone in ISO format (e.g., "2024-02-19T12:30:45.678Z").
 
-```
+```javascript
 const method = req.method;
 ```
 This line extracts the HTTP method used in the incoming request (e.g., GET, POST, PUT, DELETE) from the req object.
 
-```
+```javascript
 console.log(`${timestamp} - ${method} request received`);
 ```
 This line logs a message to the console, containing the timestamp and HTTP method of the incoming request in the specified format.
 
-```
+```javascript
 next();
 ```
 This line calls the next() function to pass control to the next middleware function in the stack. This allows the Express application to continue processing subsequent middleware or route handlers.
 
-```
+```javascript
 const app = express();
 ```
 This line creates an instance of the Express application, which will be used to define routes, middleware, and start the server.
 
-```
+```javascript
 app.use(requestLoggerMiddleware);
 ```
 This line applies the requestLoggerMiddleware middleware function to all incoming requests to the Express application. Middleware functions are executed sequentially in the order they are defined, and they can intercept and modify incoming requests or outgoing responses.
 
-```
+```javascript
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
