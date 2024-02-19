@@ -25,6 +25,7 @@ This line defines a route handler for the root URL ("/").
 When a GET request is made to the root URL, this handler is triggered.
 res.sendFile() is used to send the "index.html" file located in the "public" directory as the response.
 Again, path.join(__dirname, 'public', 'index.html') constructs the absolute path to the "index.html" file.
+used to join together multiple path segments into a single path
 
 ```javascript
 app.listen(3000, () => {
